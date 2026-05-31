@@ -1,22 +1,22 @@
 import Image from "next/image";
 
 const skills = [
-    { src: "/image/python_logo.png", alt: "Python Logo" },
-    { src: "/image/c++_logo.png", alt: "C++ Logo" },
-    { src: "/image/js_logo.jpg", alt: "JS Logo" },
-    { src: "/image/nextjs_logo.png", alt: "NextJS Logo", whiteLogo: true },
-    { src: "/image/reactjs_logo.png", alt: "React Logo" },
-    { src: "/image/typescript_logo.png", alt: "TypeScript Logo" },
-    { src: "/image/tailwindcss_logo.png", alt: "TailwindCSS Logo" },
-    { src: "/image/php_logo.png", alt: "PHP Logo" },
-    { src: "/image/r_logo.png", alt: "R Logo" },
-    { src: "/image/mysql_logo.png", alt: "MySQL Logo" },
-    { src: "/image/pytorch_logo.png", alt: "Pytorch Logo" },
-    { src: "/image/pyspark_logo.png", alt: "Pyspark Logo", whiteLogo: true },
-    { src: "/image/tableau_logo.png", alt: "Tableau Logo" },
-    { src: "/image/databricks_logo.png", alt: "Databricks Logo", whiteLogo: true },
-    { src: "/image/docker_logo.png", alt: "Docker Logo" },
-    { src: "/image/github_logo.png", alt: "Git Logo", whiteLogo: true },
+    { src: "image/python_logo.png", alt: "Python Logo" },
+    { src: "image/c++_logo.png", alt: "C++ Logo" },
+    { src: "image/js_logo.jpg", alt: "JS Logo" },
+    { src: "image/nextjs_logo.png", alt: "NextJS Logo", whiteLogo: true },
+    { src: "image/reactjs_logo.png", alt: "React Logo" },
+    { src: "image/typescript_logo.png", alt: "TypeScript Logo" },
+    { src: "image/tailwindcss_logo.png", alt: "TailwindCSS Logo" },
+    { src: "image/php_logo.png", alt: "PHP Logo" },
+    { src: "image/r_logo.png", alt: "R Logo" },
+    { src: "image/mysql_logo.png", alt: "MySQL Logo" },
+    { src: "image/pytorch_logo.png", alt: "Pytorch Logo" },
+    { src: "image/pyspark_logo.png", alt: "Pyspark Logo", whiteLogo: true },
+    { src: "image/tableau_logo.png", alt: "Tableau Logo" },
+    { src: "image/databricks_logo.png", alt: "Databricks Logo", whiteLogo: true },
+    { src: "image/docker_logo.png", alt: "Docker Logo" },
+    { src: "image/github_logo.png", alt: "Git Logo", whiteLogo: true },
 ];
 
 export default function Skills() {

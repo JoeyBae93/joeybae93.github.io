@@ -5,21 +5,21 @@ const myProjects: ProjectData[] = [
   {
     title: "AI Dungeon Master Assistant",
     description: "An AI-driven tool for tabletop RPGs that dynamically generates campaign scenarios, NPC dialogue, and encounter scaling using advanced NLP models.",
-    image: "/image/project1-placeholder.png", // Make sure to add a real image path!
+    image: "image/project1-placeholder.png", // Make sure to add a real image path!
     techStack: ["Python", "Next.js", "PyTorch", "Tailwind CSS"],
     githubUrl: "https://github.com/joeybae/repo",
   },
   {
     title: "Automated Content Pipeline",
     description: "A fully automated workflow utilizing n8n and Hunch APIs to generate, process, and distribute creative media assets without human intervention.",
-    image: "/image/project2-placeholder.png",
+    image: "image/project2-placeholder.png",
     techStack: ["n8n", "Docker", "JavaScript", "REST APIs"],
     githubUrl: "https://github.com/joeybae/repo",
   },
   {
     title: "Predictive Market Model",
     description: "Built during my Research Assistant role, utilizing Long Short-Term Memory (LSTM) models and Prophet to analyze and predict dataset trends.",
-    image: "/image/project3-placeholder.png",
+    image: "image/project3-placeholder.png",
     techStack: ["Python", "LSTM", "Data Science", "SQL"],
   }
 ];

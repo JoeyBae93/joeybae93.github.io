@@ -27,7 +27,7 @@ export default function Hero() {
                 </div>
                 <div className="w-[45%] flex justify-center">
                     <Image
-                        src="/image/profile_pic_v04.png"
+                        src="image/profile_pic_v04.png"
                         width={400}
                         height={400}
                         className="w-full object-contain mask-[linear-gradient(to_bottom,black_70%,transparent_80%)]"
