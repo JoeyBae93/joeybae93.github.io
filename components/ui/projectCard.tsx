@@ -1,0 +1,133 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Button from "@/components/ui/button";
+
+export interface ProjectData {
+    title: string;
+    description: string;
+    image: string;
+    techStack: string[];
+    githubUrl?: string;
+    liveUrl?: string;
+}
+
+export default function ProjectCard({ project }: { project: ProjectData }) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    // Prevent background scrolling when modal is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => { document.body.style.overflow = "unset"; };
+    }, [isOpen]);
+
+    return (
+        <>
+            <div onClick={() => setIsOpen(true)} className="group relative aspect-square w-full cursor-pointer overflow-hidden rounded-2xl border border-neutral-800 bg-[#0A0F0D] transition-all duration-500 hover:border-[#A1FFCE]/50 hover:shadow-[0_0_30px_rgba(161,255,206,0.1)]">
+                {/* Project Image */}
+                <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Gradient Overlay (Makes text readable) */}
+                <div className="absolute inset-0 bg-linear-to-t from-[#060A08] via-[#060A08]/60 to-transparent opacity-90 transition-opacity group-hover:opacity-100" />
+
+                {/* Card Content (Bottom Aligned) */}
+                <div className="absolute bottom-0 left-0 flex w-full flex-col p-6 transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
+                    <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-[#A1FFCE] transition-colors">
+                        {project.title}
+                    </h3>
+          
+                    {/* Tech Stack Preview (Shows first 3 tags) */}
+                    <div className="flex flex-wrap gap-2">
+                        {project.techStack.slice(0, 3).map((tech, index) => (
+                            <span key={index} className="rounded-2xl bg-[#141F1A] border border-emerald-950/50 px-2.5 py-1 text-xs font-medium text-gray-300">
+                                {tech}
+                            </span>
+                        ))}
+                        {project.techStack.length > 3 && (
+                            <span className="rounded-2xl bg-neutral-900 px-2.5 py-1 text-xs font-medium text-gray-400">
+                                +{project.techStack.length - 3}
+                            </span>
+                        )}
+                    </div>
+                </div>
+            </div>
+
+            {/* ============================== */}
+            {/* THE MODAL (The Pop-up Window)  */}
+            {/* ============================== */}
+            {isOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+          
+                    {/* Blurred Backdrop (Clicks outside close the modal) */}
+                    <div 
+                        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
+                        onClick={() => setIsOpen(false)}
+                    />
+
+                    {/* Modal Content Box */}
+                    <div className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-neutral-800 bg-[#0A0F0D] shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+            
+                        {/* Close Button (X icon) */}
+                        <button 
+                            onClick={() => setIsOpen(false)}
+                            className="absolute right-4 top-4 z-20 rounded-full bg-black/50 p-2 text-gray-400 hover:text-white hover:bg-black transition-colors"
+                        >
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+
+                        {/* Modal Image Header */}
+                        <div className="relative h-64 w-full sm:h-80">
+                            <Image src={project.image} alt={project.title} fill className="object-cover" />
+                            <div className="absolute inset-0 bg-linear-to-t from-[#0A0F0D] to-transparent" />
+                        </div>
+
+                        {/* Modal Text Body */}
+                        <div className="px-8 pb-8 pt-4">
+                            <h2 className="text-3xl font-bold text-white mb-4">{project.title}</h2>
+              
+                            {/* Full Tech Stack */}
+                            <div className="flex flex-wrap gap-2 mb-6">
+                                {project.techStack.map((tech, index) => (
+                                    <span key={index} className="rounded-2xl bg-[#141F1A] border border-emerald-950/50 px-3 py-1 text-sm font-medium text-[#A1FFCE]">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <p className="text-gray-400 leading-relaxed mb-8 text-lg">
+                                {project.description}
+                            </p>
+
+                            {/* Action Buttons */}
+                            <div className="flex flex-wrap gap-4">
+                                {project.githubUrl && (
+                                    <a href={project.githubUrl} target="_blank" rel="noreferrer">
+                                        <Button>View Source Code</Button>
+                                    </a>
+                                )}
+                                {project.liveUrl && (
+                                    <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                                        <Button className="opacity-70 hover:opacity-100">Live Demo</Button>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
+    );
+}
