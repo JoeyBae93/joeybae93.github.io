@@ -42,19 +42,17 @@ export default function ProjectCard({ project }: { project: ProjectData }) {
 
                 {/* Card Content (Bottom Aligned) */}
                 <div className="absolute bottom-0 left-0 flex w-full flex-col p-6 transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
-                    <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-[#A1FFCE] transition-colors">
+                    <h3 className="mb-2 text-2xl font-bold text-white group-hover:text-[#A1FFCE] transition-colors line-clamp-2 h-16 flex items-end">
                         {project.title}
                     </h3>
           
-                    {/* Tech Stack Preview (Shows first 3 tags) */}
-                    <div className="flex flex-wrap gap-2">
-                        {project.techStack.slice(0, 3).map((tech, index) => (
-                            <span key={index} className="rounded-2xl bg-[#141F1A] border border-emerald-950/50 px-2.5 py-1 text-xs font-medium text-gray-300">
-                                {tech}
-                            </span>
-                        ))}
+                    {/* Tech Stack Preview */}
+                    <div className="flex items-center gap-2 mt-1 h-6 w-full overflow-hidden text-sm text-neutral-400 font-medium">
+                        <span className="truncate group-hover:text-white transition-colors duration-500">
+                            {project.techStack.slice(0, 3).join(" • ")}
+                        </span>
                         {project.techStack.length > 3 && (
-                            <span className="rounded-2xl bg-neutral-900 px-2.5 py-1 text-xs font-medium text-gray-400">
+                            <span className="shrink-0 rounded-full bg-neutral-900 border border-neutral-800/80 px-2 py-0.5 text-[10px] font-semibold group-hover:text-white transition-colors">
                                 +{project.techStack.length - 3}
                             </span>
                         )}

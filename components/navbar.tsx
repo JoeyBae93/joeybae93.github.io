@@ -18,8 +18,9 @@ export default function Navbar() {
     const pathname = usePathname();
 
     return (
-        <header className='mt-3 w-full flex flex-col items-centerbg-transparent z-50'>
-            <nav className="w-3/4 container mx-auto flex items-center justify-between">
+        <header className="fixed top-0 left-0 w-full flex flex-col items-center z-50">
+            <div className="absolute inset-0 bg-zinc-950 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] backdrop-blur-md -z-10 h-[120%]" />
+            <nav className="w-3/4 container mx-auto flex py-6 items-center justify-between">
                 <Link href="/" className="flex items-center">
                     <span className="text-2xl font-bold">JoeyB</span>
                 </Link>

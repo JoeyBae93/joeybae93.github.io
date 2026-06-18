@@ -3,11 +3,11 @@ import ProjectCard, { ProjectData } from "@/components/ui/projectCard";
 // Your portfolio data (You can eventually move this to a separate data.ts file!)
 const myProjects: ProjectData[] = [
   {
-    title: "AI Dungeon Master Assistant",
-    description: "An AI-driven tool for tabletop RPGs that dynamically generates campaign scenarios, NPC dialogue, and encounter scaling using advanced NLP models.",
-    image: "image/project1-placeholder.png", // Make sure to add a real image path!
-    techStack: ["Python", "Next.js", "PyTorch", "Tailwind CSS"],
-    githubUrl: "https://github.com/joeybae/repo",
+    title: "Interactive Developer Portfolio",
+    description: "A premium personal portfolio website showcasing software engineering projects and technical skills, featuring custom-designed interactive components, fluid layout animations, and clean dark-mode aesthetics.",
+    image: "image/project1-placeholder.png",
+    techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Web3Forms", "GitHub Actions"],
+    githubUrl: "https://github.com/JoeyBae93/11_PersonalWebsite",
   },
   {
     title: "Automated Content Pipeline",
@@ -26,15 +26,13 @@ const myProjects: ProjectData[] = [
 
 export default function Projects() {
   return (
-    <section className="w-full pt-36 flex flex-col items-center">
-      <div className="w-3/4 max-w-7xl">
+    <div id="projects" className="w-full pt-36 flex flex-col items-center">
+      <h2 className="text-6xl font-bold mb-16 bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
+        PROJECTS
+      </h2>
         
-        {/* Section Header */}
-        <h2 id="projects" className="text-4xl font-bold mb-12 text-white">
-          Selected <span className="bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">Projects</span>
-        </h2>
+      <div className="w-3/4 max-w-7xl">
 
-        {/* The Grid: 1 column on mobile, 2 on tablet, 3 on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           {/* Map through the array and render a card for each project */}
@@ -45,6 +43,6 @@ export default function Projects() {
         </div>
 
       </div>
-    </section>
+    </div>
   );
 }

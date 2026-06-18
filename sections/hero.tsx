@@ -1,41 +1,52 @@
 import Button from "@/components/ui/button";
+import BackgroundEffect from "@/components/backgroundEffect";
+import AutoTextRoll from "@/components/ui/autoTextRoll";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
     return (
-        <main className="flex flex-col items-center justify-center">
-            <div className="h-[calc(100vh-100px)] w-3/4 flex flex-row">
-                <div className="w-[55%] flex flex-col justify-center">
-                    <h1 className="text-5xl font-bold pb-8">
-                        Hello 👋🏻, I'm {' '}
-                        <span className="bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
-                            Joey Bae
-                        </span>
-                    </h1>
-                    <p className="text-xl">
-                        I am a Software Developer with strong passion for Front-End development, Data Science, and AI engineering, all backed by a professional foundation in Graphic Design.
+        <section className="flex flex-col items-center justify-center relative">
+
+            <div className="h-[calc(100vh-100px)] w-3/4 flex flex-col justify-center items-center z-10 relative">
+                <div className="flex flex-row mb-4 items-center border border-white/10 bg-gray-900/80 px-4 py-2 rounded-full backdrop-blur-xs">
+                    <p className="text-md font-bold text-[#F2F2F2]">
+                        👋🏻 Hello! I'm Joey Bae, and I am...
                     </p>
-                    <div className="pt-8 flex gap-4">
-                        <a href="./public/JoeyBae_SWEngineer_2026.pdf" download>
-                            <Button>Download Resume</Button>
-                        </a>
-                        <Link href="#contact">
-                            <Button>Get in Touch</Button>
-                        </Link>
-                    </div>
                 </div>
-                <div className="w-[45%] flex justify-center">
-                    <Image
-                        src="image/profile_pic_v04.png"
-                        width={400}
-                        height={400}
-                        className="w-full object-contain mask-[linear-gradient(to_bottom,black_70%,transparent_80%)]"
-                        alt="Profile Image"
-                        priority
-                    />
-                </div>
+                <AutoTextRoll />
             </div>
-        </main>
+
+            {/* Combined Background & Border Glow Container */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[calc(100vh-100px)] w-5/6 rounded-b-[3rem] overflow-hidden pointer-events-none z-0">
+                {/* Background Nebula & Stars */}
+                <BackgroundEffect />
+
+                {/* Bottom Border Glow Overlay */}
+                <svg className="absolute inset-0 w-full h-full z-10" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <radialGradient id="borderGlow" cx="50%" cy="100%" r="90%">
+                            <stop offset="0%" stopColor="#A1FFCE" stopOpacity="1" />
+                            <stop offset="40%" stopColor="#059669" stopOpacity="0.8" />
+                            <stop offset="80%" stopColor="#022c22" stopOpacity="0" />
+                        </radialGradient>
+                    </defs>
+
+                    <rect
+                        x="1.5"
+                        y="1.5"
+                        width="calc(100% - 3px)"
+                        height="calc(100% - 3px)"
+                        style={{
+                            rx: '3rem',
+                            ry: '3rem',
+                        }}
+                        fill="none"
+                        stroke="url(#borderGlow)"
+                        strokeWidth="3"
+                    />
+                </svg>
+            </div>
+        </section>
     );
 }

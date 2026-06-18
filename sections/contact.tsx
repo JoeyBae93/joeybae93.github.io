@@ -44,11 +44,11 @@ export default function Contact() {
     };
 
     return (
-        <section className="w-full py-36 flex justify-center">
+        <section className="w-full pt-36 pb-12 flex flex-col items-center">
+            <h2 className="text-6xl font-bold mb-16 bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
+                Let's <span className="bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">Keep in Touch</span>
+            </h2>
             <div className="w-5/6 max-w-6xl gap-16 lg:gap-24">
-                <h2 id="contact" className="text-4xl font-bold text-white mb-6 tracking-tight">
-                    Let's <span className="bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">Keep in Touch</span>
-                </h2>
                 <div className="flex flex-row gap-10"> 
                     <div className="w-[40%]">
                         <p className="text-neutral-400 leading-relaxed text-lg mb-8">

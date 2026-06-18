@@ -27,9 +27,12 @@ const myExperiences: ExperienceData[] = [
 
 export default function Experiences() {
     return (
-        <div className="w-full flex flex-col items-center pt-36">
+        <div id="experiences" className="w-full flex flex-col items-center pt-36">
+            <h2 className="text-6xl font-bold mb-16 bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
+                EXPERIENCES
+            </h2>
+
             <div className="w-3/4">
-                <h2 id="experiences" className="text-4xl font-bold mb-12">Work <span className="bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">Experience</span></h2>
                 <div className="flex flex-col gap-12">
                     {/* Map through the array and render a card for each experience */}
                     {myExperiences.map((experience, index) => (

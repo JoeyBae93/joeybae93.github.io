@@ -8,7 +8,7 @@ The portfolio is built as a highly responsive, modern single-page application us
 
 ## 🚀 Live Site
 
-Check out the live portfolio: **[joeyb-portfolio](https://joeybae.github.io/joeyb-portfolio)** _(or your configured GitHub Pages URL)_
+Check out the live portfolio: **[joeyb-portfolio](https://JoeyBae93.github.io/joeyb-portfolio)**
 
 ---
 
@@ -26,8 +26,8 @@ Check out the live portfolio: **[joeyb-portfolio](https://joeybae.github.io/joey
 ## ✨ Features
 
 - **Dynamic Navigation & Smooth Scrolling**: Seamless scrolling navigation between section anchors (`#skills`, `#projects`, `#experiences`, `#contact`).
-- **Interactive Skills Section**: Dynamic grids displaying grayscale tech logos that light up and zoom on hover.
-- **Projects Showcase**: Customized grid components featuring selected works (e.g., AI Dungeon Master Assistant, Automated Content Pipeline, and Predictive Market Models).
+- **Interactive Skills Section**: Custom interactive bubble grids showing brand-specific icons with animated scaling, physics-based motion transitions, and customizable hover glow effects. Features programmatic category sorting (Coding Languages, Web Development, Databases, Machine Learning, Creative Design).
+- **Projects Showcase**: Customized grid components featuring selected works (e.g., Interactive Developer Portfolio, Automated Content Pipeline, and Predictive Market Models).
 - **Interactive Experience Timeline**: Structured and rich details of professional roles (Liberty University Research Assistant, Trans World Radio Intern) with relevant skill badges.
 - **Working Contact Form**: Integrates directly with Web3Forms API to send messages straight to inbox.
 - **Dark Mode Aesthetics**: Sleek dark theme featuring premium mint-yellow gradients, custom-styled buttons, and glassmorphism.
@@ -46,21 +46,25 @@ joeyb-portfolio/
 │   └── page.tsx         # Single Page application layout containing all sections
 ├── components/
 │   ├── ui/
+│   │   ├── autoTextRoll.tsx   # Rotating keyword/typing animation component
 │   │   ├── button.tsx         # Global button component
 │   │   ├── experienceCard.tsx # Experience card/timeline component
-│   │   └── projectCard.tsx    # Showcase project card component
+│   │   ├── projectCard.tsx    # Showcase project card component
+│   │   └── skillBubbles.tsx   # Custom interactive skill bubble rendering
+│   ├── backgroundEffect.tsx   # Ambient glow background particle/grain effect
 │   ├── footer.tsx       # Global website footer
 │   └── navbar.tsx       # Header with smooth-scroll section anchors
 ├── sections/
-│   ├── hero.tsx         # Welcome banner, resume download, profile picture
-│   ├── skills.tsx       # Grayscale-to-color skills grid
-│   ├── projects.tsx     # Custom project mapping
+│   ├── aboutMe.tsx      # Descriptive profile/background details section
+│   ├── hero.tsx         # Welcome banner, rotating text, profile picture & resume
+│   ├── skills.tsx       # Staggered interactive skills listing
+│   ├── projects.tsx     # Project cards showcase mapping
 │   ├── experiences.tsx  # Work experience listings
 │   └── contact.tsx      # Contact form connected to Web3Forms API
 ├── public/
 │   ├── image/           # Images and SVG logos
 │   └── JoeyBae_SWEngineer_2026.pdf # Resume PDF
-├── next.config.ts       # Next.js configurations (includes static export configurations)
+├── next.config.ts       # Next.js configurations (static export)
 ├── package.json         # Project dependencies & scripts
 └── tsconfig.json        # TypeScript configurations
 ```
@@ -92,7 +96,7 @@ To allow Next.js to export static files and host them properly under GitHub Page
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/joeybae/joeyb-portfolio.git
+   git clone https://github.com/JoeyBae93/joeyb-portfolio.git
    cd joeyb-portfolio
    ```
 
