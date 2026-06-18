@@ -45,7 +45,7 @@ export default function SkillBubble({ name, icon, hoverColor, boldIcon = false, 
             whileHover="hover" 
             whileTap={{ scale: 0.96 }}
             variants={bubbleVariants}
-            className="relative h-24 w-24 aspect-square flex flex-col items-center justify-center text-center rounded-full bg-gray-900/90 text-[#F2F2F2] backdrop-blur-md cursor-pointer select-none p-2 shrink-0 group gap-1"
+            className="relative h-20 w-20 sm:h-24 sm:w-24 aspect-square flex flex-col items-center justify-center text-center rounded-full bg-gray-900/90 text-[#F2F2F2] backdrop-blur-md cursor-pointer select-none p-2 shrink-0 group gap-1"
         >
             <motion.div 
                 variants={glowVariants}

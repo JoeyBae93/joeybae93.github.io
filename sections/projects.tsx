@@ -14,11 +14,11 @@ const myProjects: ProjectData[] = [
 export default function Projects() {
   return (
     <div id="projects" className="w-full pt-36 flex flex-col items-center">
-      <h2 className="text-6xl font-bold mb-16 bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
+      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-16 w-full text-center bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
         PROJECTS
       </h2>
         
-      <div className="w-3/4 max-w-7xl">
+      <div className="w-11/12 md:w-3/4 max-w-7xl">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           

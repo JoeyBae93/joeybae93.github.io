@@ -45,17 +45,17 @@ export default function Contact() {
 
     return (
         <section className="w-full pt-36 pb-12 flex flex-col items-center">
-            <h2 className="text-6xl font-bold mb-16 bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-16 w-full text-center bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
                 Let's <span className="bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">Keep in Touch</span>
             </h2>
-            <div className="w-5/6 max-w-6xl gap-16 lg:gap-24">
-                <div className="flex flex-row gap-10"> 
-                    <div className="w-[40%]">
+            <div className="w-11/12 md:w-5/6 max-w-6xl gap-16 lg:gap-24">
+                <div className="flex flex-col md:flex-row gap-10"> 
+                    <div className="w-full md:w-[40%] text-center md:text-left">
                         <p className="text-neutral-400 leading-relaxed text-lg mb-8">
                             I am currently seeking full-time software engineering opportunities where I can bridge the gap between intelligent, data-driven systems and seamless user experiences. Whether you are a recruiter hiring for a hybrid tech role, a team looking to collaborate, or just want to talk code, my inbox is always open. Let's build something great together!
                         </p>
                     </div>
-                    <form onSubmit={onSubmit} className="w-[60%] flex flex-col gap-6">
+                    <form onSubmit={onSubmit} className="w-full md:w-[60%] flex flex-col gap-6">
                         {/* Name Input */}
                         <div>
                             <input

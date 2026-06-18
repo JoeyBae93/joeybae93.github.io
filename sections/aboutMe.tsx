@@ -3,13 +3,13 @@ import Image from "next/image";
 export default function AboutMe() {
     return (
         <section className="flex flex-col items-center justify-center">
-            <h2 id="aboutMe" className="text-6xl font-bold mt-36 bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
+            <h2 id="aboutMe" className="text-4xl sm:text-5xl lg:text-6xl font-bold mt-36 w-full text-center bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
                 ABOUT ME
             </h2>
             
-            <div className="h-auto w-3/4 flex flex-row mt-12 items-center gap-8">
+            <div className="h-auto w-11/12 md:w-3/4 flex flex-col lg:flex-row mt-12 items-center gap-8 lg:gap-12">
                 {/* Profile Image Column */}
-                <div className="w-[45%] flex justify-center">
+                <div className="w-full lg:w-[45%] flex justify-center max-w-[280px] sm:max-w-[360px] lg:max-w-none">
                     <Image
                         src="image/profile_pic_v04.png"
                         width={400}
@@ -21,7 +21,7 @@ export default function AboutMe() {
                 </div>
                 
                 {/* Text Content Column */}
-                <div className="w-[55%] flex flex-col justify-center max-w-2xl">
+                <div className="w-full lg:w-[55%] flex flex-col justify-center max-w-2xl text-center lg:text-left">
                     <p className="text-xl leading-relaxed text-zinc-300 font-light">
                         I am a {' '}
                         <span className="font-bold italic bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">

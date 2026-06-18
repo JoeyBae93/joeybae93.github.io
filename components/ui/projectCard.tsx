@@ -86,7 +86,7 @@ export default function ProjectCard({ project }: { project: ProjectData }) {
                     />
 
                     {/* Modal Content Box */}
-                    <div className="relative z-10 w-full max-w-3xl overflow-hidden rounded-2xl border border-neutral-800 bg-[#0A0F0D] shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+                    <div className="relative z-10 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl border border-neutral-800 bg-[#0A0F0D] shadow-2xl animate-in fade-in zoom-in-95 duration-200">
             
                         {/* Close Button (X icon) */}
                         <button 
@@ -100,12 +100,12 @@ export default function ProjectCard({ project }: { project: ProjectData }) {
                         </button>
 
                         {/* Modal Image Header */}
-                        <div className="relative h-64 w-full sm:h-80 select-none">
+                        <div className="relative h-48 sm:h-64 md:h-80 w-full select-none">
                             {project.image.includes("placeholder") ? (
                                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#050807] p-6 text-center select-none">
                                     <div className="absolute inset-0 opacity-45" 
                                          style={{ backgroundImage: "radial-gradient(circle at center, rgba(161,255,206,0.12) 0%, transparent 75%)" }} />
-                                    <svg className="w-14 h-14 mb-3 text-[#A1FFCE]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                                    <svg className="w-10 h-10 sm:w-14 sm:h-14 mb-2 sm:mb-3 text-[#A1FFCE]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
                                     </svg>
                                     <span className="text-xs uppercase tracking-widest text-[#A1FFCE]/45 font-bold">
@@ -119,7 +119,7 @@ export default function ProjectCard({ project }: { project: ProjectData }) {
                         </div>
 
                         {/* Modal Text Body */}
-                        <div className="px-8 pb-8 pt-4">
+                        <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-4">
                             <h2 className="text-3xl font-bold text-white mb-4">{project.title}</h2>
               
                             {/* Full Tech Stack */}

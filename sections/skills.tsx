@@ -210,34 +210,32 @@ export default function Skills() {
         return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
     });
 
-    const staggeredRows = [];
+    const staggeredRows: typeof sortedSkillsList[] = [];
     let currentIndex = 0;
-    let isTenRow = true;
+    let isRowOf10 = true;
 
     while (currentIndex < sortedSkillsList.length) {
-        const rowSize = isTenRow ? 10 : 9;
+        const rowSize = isRowOf10 ? 10 : 9;
         staggeredRows.push(sortedSkillsList.slice(currentIndex, currentIndex + rowSize));
         currentIndex += rowSize;
-        isTenRow = !isTenRow; // Flips the toggle for the next loop (10 -> 9 -> 10)
+        isRowOf10 = !isRowOf10;
     }
 
     return (
         <section id="skills" className="flex flex-col items-center justify-center py-24">
-            <h2 className="text-6xl font-bold mb-16 bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-16 w-full text-center bg-linear-to-r from-[#A1FFCE] to-[#FAFFD1] bg-clip-text text-transparent">
                 SKILLS
             </h2>
 
-            <div className="w-[85%] flex flex-col items-center justify-center gap-4 px-4">
-                
+            <div className="w-11/12 lg:w-[85%] max-w-7xl flex flex-row flex-wrap lg:flex-col lg:flex-nowrap items-center justify-center gap-4 lg:gap-6 px-4">
                 {staggeredRows.map((row, rowIndex) => (
-                    
-                    <div 
-                        key={`row-${rowIndex}`} 
-                        className="flex flex-row flex-wrap items-center justify-center gap-6 w-full"
+                    <div
+                        key={rowIndex}
+                        className="contents lg:flex lg:flex-row lg:flex-nowrap lg:items-center lg:justify-center lg:gap-6 lg:w-full"
                     >
-                        {row.map((skill, skillIndex) => (
+                        {row.map((skill, index) => (
                             <SkillBubble 
-                                key={`skill-${rowIndex}-${skillIndex}`} 
+                                key={`skill-${rowIndex}-${index}`} 
                                 name={skill.name} 
                                 icon={skill.icon}
                                 hoverColor={skill.hoverColor}
@@ -246,9 +244,7 @@ export default function Skills() {
                             />
                         ))}
                     </div>
-
                 ))}
-
             </div>
         </section>
     );

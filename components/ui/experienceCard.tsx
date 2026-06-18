@@ -15,15 +15,15 @@ export interface ExperienceData {
 
 export default function ExperienceCard({ experience }: { experience: ExperienceData }) {
     return (
-        <div className="w-full flex flex-row gap-6">
+        <div className="w-full flex flex-col sm:flex-row gap-6">
             
             {/* 1. THE LOGO BOX: Strict dimensions, relative positioning, and shrink-0 */}
-            <div className="relative w-20 h-20 shrink-0 rounded-xl border border-neutral-800 bg-[#0A0F0D] overflow-hidden">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-xl border border-neutral-800 bg-[#0A0F0D] overflow-hidden">
                 <Image 
                     src={experience.logo} 
                     alt={experience.company} 
                     fill
-                    className="object-contain p-3" 
+                    className="object-contain p-2 sm:p-3" 
                 />
             </div>
 

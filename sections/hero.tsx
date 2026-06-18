@@ -8,7 +8,7 @@ export default function Hero() {
     return (
         <section className="flex flex-col items-center justify-center relative">
 
-            <div className="h-[calc(100vh-100px)] w-3/4 flex flex-col justify-center items-center z-10 relative">
+            <div className="h-[calc(100vh-100px)] w-11/12 md:w-3/4 flex flex-col justify-center items-center z-10 relative">
                 <div className="flex flex-row mb-4 items-center border border-white/10 bg-gray-900/80 px-4 py-2 rounded-full backdrop-blur-xs">
                     <p className="text-md font-bold text-[#F2F2F2]">
                         👋🏻 Hello! I'm Joey Bae, and I am...
@@ -18,7 +18,7 @@ export default function Hero() {
             </div>
 
             {/* Combined Background & Border Glow Container */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[calc(100vh-100px)] w-5/6 rounded-b-[3rem] overflow-hidden pointer-events-none z-0">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[calc(100vh-100px)] w-[95%] md:w-5/6 rounded-b-[3rem] overflow-hidden pointer-events-none z-0">
                 {/* Background Nebula & Stars */}
                 <BackgroundEffect />
 
