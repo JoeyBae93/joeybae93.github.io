@@ -30,12 +30,25 @@ export default function ProjectCard({ project }: { project: ProjectData }) {
         <>
             <div onClick={() => setIsOpen(true)} className="group relative aspect-square w-full cursor-pointer overflow-hidden rounded-2xl border border-neutral-800 bg-[#0A0F0D] transition-all duration-500 hover:border-[#A1FFCE]/50 hover:shadow-[0_0_30px_rgba(161,255,206,0.1)]">
                 {/* Project Image */}
-                <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                {project.image.includes("placeholder") ? (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#050807] p-6 text-center select-none">
+                        <div className="absolute inset-0 opacity-45" 
+                             style={{ backgroundImage: "radial-gradient(circle at center, rgba(161,255,206,0.1) 0%, transparent 70%)" }} />
+                        <svg className="w-12 h-12 mb-3 text-[#A1FFCE]/20 group-hover:text-[#A1FFCE]/40 group-hover:scale-110 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
+                        </svg>
+                        <span className="text-xs uppercase tracking-widest text-[#A1FFCE]/40 font-bold group-hover:text-[#A1FFCE]/60 transition-colors">
+                            Preview Coming Soon
+                        </span>
+                    </div>
+                ) : (
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                )}
 
                 {/* Gradient Overlay (Makes text readable) */}
                 <div className="absolute inset-0 bg-linear-to-t from-[#060A08] via-[#060A08]/60 to-transparent opacity-90 transition-opacity group-hover:opacity-100" />
@@ -87,8 +100,21 @@ export default function ProjectCard({ project }: { project: ProjectData }) {
                         </button>
 
                         {/* Modal Image Header */}
-                        <div className="relative h-64 w-full sm:h-80">
-                            <Image src={project.image} alt={project.title} fill className="object-cover" />
+                        <div className="relative h-64 w-full sm:h-80 select-none">
+                            {project.image.includes("placeholder") ? (
+                                <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#050807] p-6 text-center select-none">
+                                    <div className="absolute inset-0 opacity-45" 
+                                         style={{ backgroundImage: "radial-gradient(circle at center, rgba(161,255,206,0.12) 0%, transparent 75%)" }} />
+                                    <svg className="w-14 h-14 mb-3 text-[#A1FFCE]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
+                                    </svg>
+                                    <span className="text-xs uppercase tracking-widest text-[#A1FFCE]/45 font-bold">
+                                        Preview Coming Soon
+                                    </span>
+                                </div>
+                            ) : (
+                                <Image src={project.image} alt={project.title} fill className="object-cover" />
+                            )}
                             <div className="absolute inset-0 bg-linear-to-t from-[#0A0F0D] to-transparent" />
                         </div>
 
