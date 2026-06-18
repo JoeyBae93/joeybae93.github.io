@@ -6,7 +6,7 @@ const myProjects: ProjectData[] = [
     title: "Interactive Developer Portfolio",
     description: "A premium personal portfolio website showcasing software engineering projects and technical skills, featuring custom-designed interactive components, fluid layout animations, and clean dark-mode aesthetics.",
     image: "image/project1-placeholder.png",
-    techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Web3Forms", "GitHub Actions"],
+    techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
     githubUrl: "https://github.com/JoeyBae93/11_PersonalWebsite",
   },
   {
