@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
 interface SkillBubbleProps {
@@ -13,7 +13,7 @@ interface SkillBubbleProps {
 
 export default function SkillBubble({ name, icon, hoverColor, boldIcon = false, iconScale = 1 }: SkillBubbleProps) {
     
-    const bubbleVariants = {
+    const bubbleVariants: Variants = {
         initial: { scale: 1, zIndex: 10 },
         hover: { 
             scale: 1.15,
@@ -22,17 +22,17 @@ export default function SkillBubble({ name, icon, hoverColor, boldIcon = false, 
         }
     };
 
-    const glowVariants = {
+    const glowVariants: Variants = {
         initial: { opacity: 0 },
         hover: { opacity: 0.35 }
     };
 
-    const borderVariants = {
+    const borderVariants: Variants = {
         initial: { opacity: 0 },
         hover: { opacity: 1, transition: { duration: 0.2 } }
     };
 
-    const iconVariants = {
+    const iconVariants: Variants = {
         initial: { color: '#a1a1aa' },
         hover: { color: hoverColor, transition: { duration: 0.2 } } 
     };
