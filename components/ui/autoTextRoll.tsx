@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 export default function AutoTextRoll() {
     // Define your core skill sets
@@ -17,7 +17,7 @@ export default function AutoTextRoll() {
         return () => clearInterval(timer);
     }, [trackingRoles.length]);
 
-    const variants = {
+    const variants: Variants = {
         enter: { y: 20, opacity: 0 },
         center: { y: 0, opacity: 1, transition: { duration: 0.4, ease: 'easeOut' } },
         exit: { y: -20, opacity: 0, transition: { duration: 0.4, ease: 'easeIn' } }
